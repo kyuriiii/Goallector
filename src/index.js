@@ -6,9 +6,10 @@ const path = require("path");
 const app = express();
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 app.use("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({extended: true}));
-app.use( bodyParser.json() );
+app.use(bodyParser.json());
 
 dotenv.config({ path: path.join(__dirname, `./config/envs/${process.env.NODE_ENV}.env`) });
 dotenv.config({ path: path.join(__dirname, "./config/envs/common.env") });

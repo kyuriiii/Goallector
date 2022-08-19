@@ -1,4 +1,8 @@
 <%- include('../include/header')%>
+    <script type="module">
+        import API from "/static/js/API.js";
+        window.API = API;
+    </script>
     <script>
         function login(){
             var form = document.getElementById("form_login");
@@ -12,13 +16,6 @@
             })
             .then((rep) => { return rep.data; })
             .then((data) => {
-                // data = { id: 9 }
-
-                let html = 
-                "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td>" + 
-                    "<td><button type='button' onclick='editComment(" + data.id + ");'>수정</button></td><td><button type='button' onclick='deleteComment(" + data.id + ");'>삭제</button></tr>";
-
-                $( "table" ).append(html);
             });
         }
     </script>
