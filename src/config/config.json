@@ -1,9 +1,9 @@
 {
     "dev": {
       "host": "localhost",
-      "username": "cofight",
-      "password": "cofight",
-      "database": "cofight",
+      "username": "goallector",
+      "password": "goallector",
+      "database": "goallector",
       "dialect": "mysql"
     },
     "docker": {
