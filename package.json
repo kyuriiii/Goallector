@@ -1,7 +1,7 @@
 {
-  "name": "cofight",
+  "name": "Goallector",
   "version": "1.0.0",
-  "description": "코로나 자가격리 격파",
+  "description": "목표 달성",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kyuriiii/coFight.git"
+    "url": "git+https://github.com/kyuriiii/Goallector.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kyuriiii/coFight/issues"
+    "url": "https://github.com/kyuriiii/Goallector/issues"
   },
-  "homepage": "https://github.com/kyuriiii/coFight#readme",
+  "homepage": "https://github.com/kyuriiii/Goallector#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
     "cross-env": "^7.0.3",
