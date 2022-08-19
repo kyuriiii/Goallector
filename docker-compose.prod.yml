@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  cofight:
+    volumes: 
+      - /app/node_modules
+      - ./:/app/
+    build: 
+      context: .
+    environment:
+      - NODE_ENV=prod
+    ports:
+      - "8000:8000"

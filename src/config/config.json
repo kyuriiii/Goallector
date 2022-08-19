@@ -1,0 +1,16 @@
+{
+    "dev": {
+      "host": "localhost",
+      "username": "cofight",
+      "password": "cofight",
+      "database": "cofight",
+      "dialect": "mysql"
+    },
+    "docker": {
+      "username": "cofight",
+      "password": "cofight",
+      "database": "cofight",        
+      "host": "db-cofight",    
+      "dialect": "mysql"
+    }
+  }

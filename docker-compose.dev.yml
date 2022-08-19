@@ -1,0 +1,31 @@
+version: "3.3"
+services:
+  cofight:
+    # depends_on:
+    #   - db-cofight
+    volumes: 
+      - /app/node_modules
+      - ./:/app/
+    build: 
+      context: .
+    environment:
+      - NODE_ENV=dev
+    ports:
+      - "8000:8000"
+  # db-cofight:
+  #   image: mysql:5.7
+  #   volumes:
+  #     - ./db/mysql:/var/lib/mysql
+  #     - ./.docker/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+  #     - ./.docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   restart: always
+  #   ports:
+  #     - 3331:3306
+  #   environment:
+  #     MYSQL_DATABASE: cofight
+  #     MYSQL_ROOT_PASSWORD: cofight
+  #     MYSQL_USER: cofight
+  #     MYSQL_PASSWORD: cofight
+  #     TZ: Asia/Seoul
+  #   command:  >
+  #       bash -c "chmod 644 /etc/mysql/conf.d/*.cnf && /entrypoint.sh mysqld"

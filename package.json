@@ -1,0 +1,31 @@
+{
+  "name": "cofight",
+  "version": "1.0.0",
+  "description": "코로나 자가격리 격파",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyuriiii/coFight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyuriiii/coFight/issues"
+  },
+  "homepage": "https://github.com/kyuriiii/coFight#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cross-env": "^7.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.4",
+    "sequelize-cli": "^6.4.1"
+  }
+}
