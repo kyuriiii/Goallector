@@ -16,8 +16,8 @@ services:
   #   image: mysql:5.7
   #   volumes:
   #     - ./db/mysql:/var/lib/mysql
-  #     - ./.docker/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
-  #     - ./.docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+  #     - ./.sql/utf8.cnf:/etc/mysql/conf.d/utf8.cnf
+  #     - ./.sql/init.sql:/docker-entrypoint-initdb.d/init.sql
   #   restart: always
   #   ports:
   #     - 3331:3306

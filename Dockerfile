@@ -1,19 +1,14 @@
-FROM node:14.7
+FROM node:16.14-alpine
 
-LABEL com.spreatics.image.authors="duru@spreatics.com"
+LABEL com.kyuri.image.authors="kyuri99@naver.com"
 
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY ./posco /app
-
-ENV NODE_ENV developments
+COPY ./ /app
 
 RUN npm install
 
-EXPOSE 9999
-
-## 디비 초기화
+EXPOSE 8000
 
 CMD ["npm", "start"]
-
