@@ -10,8 +10,8 @@ app.use("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({extended: true}));
 app.use( bodyParser.json() );
 
-dotenv.config({ path: path.join(__dirname, "./config/envs/common.env") });
 dotenv.config({ path: path.join(__dirname, `./config/envs/${process.env.NODE_ENV}.env`) });
+dotenv.config({ path: path.join(__dirname, "./config/envs/common.env") });
 
 const router = require("./routes");
 const userRouter = require("./routes/userRouter");
