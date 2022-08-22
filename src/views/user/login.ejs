@@ -1,21 +1,18 @@
 <%- include('../include/header')%>
-    <script type="module">
-        import API from "/static/js/API.js";
-        window.API = API;
-    </script>
     <script>
         function login(){
             var form = document.getElementById("form_login");
-            axios({
-                method: 'post',
-                url: 'http://localhost:8000/visitor/write',
-                data: {
-                    name: form.name.value,
-                    comment: form.comment.value
+            var data = {
+                nickname: form.nickname.value,
+                password: form.password.value
+            }
+
+            window.API.post(`${URL}/user/login`, data).then((result) => {
+                if ( result.return ) window.MSG.success("로그인 성공", `${result.user.nickname}님 환영합니다.` );
+                else {
+                    window.MSG.error("로그인 실패", result.msg);
+                    form.reset();
                 }
-            })
-            .then((rep) => { return rep.data; })
-            .then((data) => {
             });
         }
     </script>
@@ -24,7 +21,7 @@
 <body>
     <form id="form_login">
         <input type="text" name="nickname" placeholder="닉네임">
-        <input type="password" name="pw" placeholder="비밀번호">
+        <input type="password" name="password" placeholder="비밀번호">
         <button type="button" onclick="login();">로그인</button>
     </form>
 </body>

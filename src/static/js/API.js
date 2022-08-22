@@ -1,3 +1,0 @@
-exports.post = (url, data) => {
-    
-}
