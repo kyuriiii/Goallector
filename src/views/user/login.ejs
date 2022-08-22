@@ -19,10 +19,13 @@
 </head>
 
 <body>
-    <form id="form_login">
-        <input type="text" name="nickname" placeholder="닉네임">
-        <input type="password" name="password" placeholder="비밀번호">
-        <button type="button" onclick="login();">로그인</button>
-    </form>
+    <%- include('../include/nav')%>
+    <div class="container">
+        <form id="form_login">
+            <input type="text" name="nickname" placeholder="닉네임">
+            <input type="password" name="password" placeholder="비밀번호">
+            <button type="button" onclick="login();">로그인</button>
+        </form>
+    </div>
 </body>
 </html>
