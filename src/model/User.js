@@ -17,6 +17,10 @@ const User = ( Sequelize, DataTypes ) => {
                 type: DataTypes.STRING(255),
                 allowNull: false,
             },
+            salt: {
+                type: DataTypes.STRING(255),
+                allowNull: false,
+            },
             gender: {
                 type: DataTypes.STRING(2),
                 allowNull: false,

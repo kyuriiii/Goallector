@@ -1,16 +1,16 @@
 {
-    "dev": {
-      "host": "localhost",
-      "username": "goallector",
-      "password": "goallector",
-      "database": "goallector",
-      "dialect": "mysql"
-    },
-    "docker": {
-      "username": "cofight",
-      "password": "cofight",
-      "database": "cofight",        
-      "host": "db-cofight",    
-      "dialect": "mysql"
-    }
+  "dev": {
+    "host": "localhost",
+    "username": "goallector",
+    "password": "goallector",
+    "database": "goallector",
+    "dialect": "mysql"
+  },
+  "docker": {
+    "username": "cofight",
+    "password": "cofight",
+    "database": "cofight",        
+    "host": "db-cofight",    
+    "dialect": "mysql"
   }
+}

@@ -1,0 +1,30 @@
+<%- include('../include/header')%>
+    <script>
+        function register(){
+            var form = document.getElementById("form_register");
+            var data = {
+                nickname: form.nickname.value,
+                password: form.password.value,
+                gender: form.gender.value
+            }
+
+            window.API.post(`${URL}/user/register`, data).then((result) => {
+                if ( result.return ) window.MSG.success("회원가입 성공", `${result.user.nickname}님 환영합니다.` );
+                else window.MSG.error("회원가입 실패", result.msg);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form_register">
+        <input type="text" name="nickname" placeholder="닉네임">
+        <input type="password" name="password" placeholder="비밀번호">
+        <select name="gender">
+            <option value="M">남성</option>
+            <option value="F">여성</option>
+        </select>
+        <button type="button" onclick="register();">로그인</button>
+    </form>
+</body>
+</html>
