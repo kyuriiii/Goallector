@@ -9,7 +9,7 @@ const GoalRepeat = ( Sequelize, DataTypes ) => {
                 primaryKey: true,
                 autoIncrement: true,
             },
-            birth: {
+            day: {
                 type: DataTypes.STRING(10),
                 defaultValue: "",
                 allowNull: false,
