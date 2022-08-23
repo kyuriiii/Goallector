@@ -2,6 +2,7 @@ create table user (
 	id int unsigned not null auto_increment primary key,
 	nickname varchar(20) not null,
 	password varchar(255) not null,
+	salt varchar(255) not null,
 	gender enum('','M','F') not null default '',
 	registered timestamp not null default current_timestamp
 );

@@ -1,6 +1,9 @@
 exports.index = (req,res) => {
-    res.render("main");
+    res.render("main/main");
 }
-exports.index2 = (req,res) => {
-    res.render("main2");
+exports.calendar = (req,res) => {
+    res.render("design/calendar1");
+}
+exports.calendar2 = (req,res) => {
+    res.render("design/calendar2");
 }
