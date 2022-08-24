@@ -13,12 +13,4 @@
             <img src="/static/img/city.png" alt="" class="city_img">
         </article>
     </section>
-    <div id="nav_right">
-        <% if ( user == null || user == "" ) { %>
-            <span onclick="javascript:location.href='/user/login';">로그인</span>
-            <span onclick="javascript:location.href='/user/register';">회원가입</span>
-        <% } else { %>
-            <span onclick="javascript:location.href='/user/logout';">로그아웃</span>
-        <% } %>
-    </div>
 </nav>

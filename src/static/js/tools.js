@@ -8,8 +8,13 @@ export class API {
 }
 
 export class MSG {
-    success(title, text) {
-        Swal.fire({ icon: 'success', title, text });
+    success(title, text, cb = ()=>{}) {
+        Swal.fire({ icon: 'success', 
+        title, 
+        showConfirmButton: false,
+        timer: 1000
+        })
+        .then(()=>{ cb() });
     }
     error(title,text) {
         Swal.fire({ icon: 'error', title, text });

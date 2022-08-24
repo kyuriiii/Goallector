@@ -1,5 +1,5 @@
 const { User } = require("../model");
-exports.verifySession = async (req, next) => {
+exports.verifySession = async (req, res,next) => {
     if ( req.session.user_id == undefined || req.session.user_id == "" ) {
         req.user = null;
         next();
@@ -15,5 +15,5 @@ exports.verifySession = async (req, next) => {
 }
 exports.checkSession = (req,res,next) => {
     if ( req.session.user_id == undefined || req.session.user_id == "" ) res.redirect("/user/login");
-    else this.verifySession(req, next);
+    else this.verifySession(req,res, next);
 }

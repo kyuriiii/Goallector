@@ -9,15 +9,18 @@
             }
 
             window.API.post(`${URL}/user/register`, data).then((result) => {
-                if ( result.return ) window.MSG.success("회원가입 성공", `${result.user.nickname}님 환영합니다.` );
-                else window.MSG.error("회원가입 실패", result.msg);
+                if ( result.return ) {
+                    window.MSG.success("회원가입 성공", `${result.user.nickname}님 환영합니다.`, () => {
+                        location.href="/";
+                    });
+                } else window.MSG.error("회원가입 실패", result.msg);
             });
         }
     </script>
 </head>
 
 <body>
-    <%- include('../include/nav')%>
+    <%- include('../include/nav_default')%>
     <form id="form_register">
         <input type="text" name="nickname" placeholder="닉네임">
         <input type="password" name="password" placeholder="비밀번호">
