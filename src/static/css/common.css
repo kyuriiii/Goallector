@@ -9,7 +9,7 @@
 
 * { font-family: 'SCDream5', sans-serif; }
 :root {
-    --color-indigo: 333D51; --color-gold: D3AC2B; --color-gray: CBD0D8; --color-beige: F4F3EA
+    --color-main: #f7f1ed; --color-pink: #febeb0; --color-deepgreen: #3d5a5b; --color-indigo: #2f365f;
 }
 
 .container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}
@@ -19,4 +19,20 @@
 @media (min-width:1200px){.container{max-width:1140px}}
 @media (min-width:1400px){.container{max-width:1320px}}
 
-body { background-color: var(--color-beige); }
+.d-block{display: block;}
+.d-none{display:none;}
+.d-flex{display:flex;}
+
+input {
+    padding: 0 1em; 
+    border: 0;
+    height: 28px;
+    width: 100%;
+    border-radius: 30px;
+}
+textarea {
+    padding: 0 1em; 
+    border: 0;
+    width: 100%;
+    border-radius: 30px;
+}
