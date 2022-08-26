@@ -1,7 +1,16 @@
 <%- include('../include/header')%>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
-<body>
-    <%- include('../include/nav')%>
 
-</body>
+    <body>
+        <%- include('../include/nav')%>
+        <div class="container">
+        <% if ( user != null ) { %>
+            <%- include('./main_user')%>
+        <% } else { %>
+            <div>none!!</div>
+        <% } %>
+        </div>
+    </body>
 </html>

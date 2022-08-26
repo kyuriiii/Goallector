@@ -73,10 +73,10 @@ exports.patch_user_info = (req,res) => {
     });
 }
 exports.logout = (req,res) => {
-    if ( req.session.user ) {
+    if ( req.session.user_id ) {
         req.session.destroy( function(err){
             if ( err ) console.log( err );
-            else res.send( true );
         });
     }
+    res.redirect("/");
 }

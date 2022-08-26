@@ -20,7 +20,12 @@ const Goal = ( Sequelize, DataTypes ) => {
             detail: {
                 type: DataTypes.TEXT('medium'),
             },
-            title: {
+            mode: {
+                type: DataTypes.STRING(20),
+                allowNull: false,
+                default: 'hobby',
+            },
+            type: {
                 type: DataTypes.STRING(20),
                 allowNull: false,
                 default: 'daily',

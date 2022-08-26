@@ -7,10 +7,10 @@
     "dialect": "mysql"
   },
   "docker": {
-    "username": "cofight",
-    "password": "cofight",
-    "database": "cofight",        
-    "host": "db-cofight",    
+    "username": "goallector",
+    "password": "goallector",
+    "database": "goallector",        
+    "host": "db-goallector",    
     "dialect": "mysql"
   }
 }

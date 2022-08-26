@@ -22,6 +22,7 @@ create table goal (
 	open enum('0','1','2') default '1',
 	title varchar(50) not null,
 	detail mediumtext,
+	mode enum('sport','hobby','study','etc','cultural','essential'),
 	type enum('year','month','daily','repeat','temp') default 'daily',
 	stage int unsigned default 1,
 	registered timestamp not null default current_timestamp,
