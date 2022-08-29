@@ -159,8 +159,8 @@ form {
 
 .overlay {
 	background: var(--color-pink);
-	background: -webkit-linear-gradient(to right, #febeb0, #ff6543);
-	background: linear-gradient(to right, #febeb0, #ff6543);
+	background: -webkit-linear-gradient(to right, #febeb0, #ff6f4f);
+	background: linear-gradient(to right, #febeb0, #ff6f4f);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
