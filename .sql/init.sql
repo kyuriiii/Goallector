@@ -1,3 +1,14 @@
+CREATE DATABASE goallector DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+use goallector;
+
+CREATE USER 'goallector'@'%' IDENTIFIED BY 'goallector';
+GRANT ALL PRIVILEGES ON goallector.* TO 'goallector'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+select host, user, plugin, authentication_string from mysql.user;
+ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
+
 create table user (
 	id int unsigned not null auto_increment primary key,
 	nickname varchar(20) not null,
