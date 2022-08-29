@@ -9,13 +9,12 @@
         cursor: pointer;
         color: var(--color-indigo);
     }
-    .swiper {
-        padding: 10px 20px;
-    }
     .today_goal {
+        padding: 10px 20px;
         border: 3px var(--color-deepgreen) solid;
         border-radius: 10px;
         width: 100%;
+        height: 20%;
         min-height: 200px;
         justify-content: center;
     }
@@ -34,9 +33,8 @@
         align-items: center;
     }
     div .swiper-slide {
-        background-color: blue;
-        width: 100px;
-        height: 170px;
+        border: 1px solid black;
+        background-size: 100% 100%;
     }
     .form_list_input input,textarea {
         padding: 0 1em; 
@@ -55,9 +53,26 @@
 </style>
 <script>
     function todayWrite(){
-        console.log( "hello" );
         if ( $("#today_write").hasClass("d-none") ) $("#today_write").removeClass("d-none").addClass("d-flex");
         else $("#today_write").removeClass("d-flex").addClass("d-none");
+    }
+    function goalWrite(){
+        var form = document.getElementById("form_goal");
+        var data = {
+            title: form.title.value,
+            detail: form.detail.value,
+            mode: form.mode.value
+        }
+
+        window.API.post(`${URL}/goal/write`, data).then((result) => {
+            if ( result.return ) {
+                console.log( result.goal );
+                alert("목표 등록");
+            } else {
+                window.MSG.error("목표 등록 실패", result.msg);
+                form.reset();
+            }
+        });
     }
 </script>
 
@@ -68,9 +83,12 @@
 <div class="today_goal">
     <div id="today_write" class="d-none" style="width: 100%; justify-content: center; padding: 10px 0;">
         <div class="today_write">
-            <form class="form_list_input">
+            <form class="form_list_input" id="form_goal">
+                <input type="radio" name="mode" value="sport">스포츠
+                <input type="radio" name="mode" value="hobby">취미
                 <input type="text" name="title" placeholder="제목">
                 <textarea name="detail" placeholder="상세내용" rows="3"></textarea>
+                <button type="button" onclick="goalWrite();">작성</button>
             </form>
         </div>
     </div>
@@ -78,7 +96,7 @@
         <% if ( daily.length != 0 ) { %>
         <div class="swiper-wrapper">
             <% daily.forEach((goal) => { %>
-                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide" style="background-image: url('/static/img/<%=goal.mode%>.png');"><%=goal.title%></div>
             <% }) %>
         </div>
             <!-- If we need navigation buttons -->
