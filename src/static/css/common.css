@@ -8,6 +8,7 @@
 }
 
 * { font-family: 'SCDream5', sans-serif; }
+body {  background-color: var(--color-main); }
 :root {
     --color-main: #f7f1ed; --color-pink: #febeb0; --color-deepgreen: #3d5a5b; --color-indigo: #2f365f;
 }
@@ -23,12 +24,21 @@
 .d-none{display:none;}
 .d-flex{display:flex;}
 
-input {
-    padding: 0 1em; 
-    border: 0;
-    height: 28px;
-    width: 100%;
-    border-radius: 30px;
+input, select {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+    color: var(--color-main);
+}
+input.input_login,
+select.select_login {
+	background-color: var(--color-indigo);
+}
+input.input_login::placeholder,
+select.select_login option {
+    color: #b1afad;
 }
 textarea {
     padding: 0 1em; 
