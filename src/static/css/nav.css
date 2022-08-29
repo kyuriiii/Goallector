@@ -70,13 +70,6 @@ section .city .city_img {
 }
 
 /* ANIMATION */
-/* @keyframes sky {
-    0% { background-color: #636888; }
-    25% { background-color: #b1e1e2; }
-    50% { background-color: #fcd2e2; }
-    75% { background-color: #675577; }
-    100% { background-color: #636888; }
-} */
 @keyframes sun {
     0% { transform: rotate(-90deg); opacity: 0; }
     25% { transform: rotate(0deg); opacity: 1; }

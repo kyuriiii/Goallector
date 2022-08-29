@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="/static/css/login.css">
+
+<div class="container" id="loginContainer">
+	<div class="form-container sign-up-container">
+		<form id="form_register">
+			<h1>Create Account</h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span> -->
+			<input type="text" class="input_login" placeholder="Nickname" name="nickname" required/>
+			<input type="password" class="input_login" placeholder="Password" name="password" required/>
+			<select name="gender" class="select_login" required>
+				<option value="" style="color: #eee;">성별 선택</option>
+				<option value="M">남성</option>
+				<option value="F">여성</option>
+			</select>
+			<button type="button" onclick="register();">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="form_login">
+			<h1>Sign in</h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span> -->
+			<input type="type" class="input_login" placeholder="Nickname" name="nickname" required/>
+			<input type="password" class="input_login" placeholder="Password" name="password" required onkeypress="if(window.event.keyCode==13) login();" />
+			<!-- <a href="#">Forgot your password?</a> -->
+			<button onclick="login();" type="button">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Goallector💙</h1>
+				<p>목표를 위해 달려나가는 Goallector에 <br>오신 것을 환영합니다.</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Come On, Goallector💛</h1>
+				<p>Gollector과 함께 <br>목표를 달성해봅시다😁</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('loginContainer');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+
+	function register(){
+		var form = document.getElementById("form_register");
+		if ( !form.checkValidity() ) {
+			form.reportValidity();
+
+			return false;
+		}
+
+		var data = {
+			nickname: form.nickname.value,
+			password: form.password.value,
+			gender: form.gender.value
+		}
+
+		window.API.post(`${URL}/user/register`, data).then((result) => {
+			if ( result.return ) {
+				window.MSG.success("회원가입 성공", `${result.user.nickname}님 환영합니다.`, () => {
+					location.href="/";
+				});
+			} else window.MSG.error("회원가입 실패", result.msg);
+		});
+	}
+	
+	function login(){
+		var form = document.getElementById("form_login");
+		if ( !form.checkValidity() ) {
+			form.reportValidity();
+
+			return false;
+		}
+		var data = {
+			nickname: form.nickname.value,
+			password: form.password.value
+		}
+
+		window.API.post(`${URL}/user/login`, data).then((result) => {
+			if ( result.return ) {
+				window.MSG.success("로그인 성공", `${result.user.nickname}님 환영합니다.`, ()=>{
+					location.href="/";
+				});
+			} else {
+				window.MSG.error("로그인 실패", result.msg);
+				form.reset();
+			}
+		});
+	}
+</script>

@@ -4,13 +4,12 @@
 </head>
 
     <body>
-        <%- include('../include/nav')%>
-        <div class="container">
         <% if ( user != null ) { %>
+            <%- include('../include/nav')%>
             <%- include('./main_user')%>
         <% } else { %>
-            <div>none!!</div>
+            <%- include('../include/nav_default')%>
+            <%- include('./main_none')%>
         <% } %>
-        </div>
     </body>
 </html>
