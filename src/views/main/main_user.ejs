@@ -91,7 +91,7 @@
             mode: form.mode.value
         }
 
-        window.API.post(`${URL}/goal/write`, data).then((result) => {
+        window.API.post(`/goal/write`, data).then((result) => {
             if ( result.return ) {
                 console.log( result.goal );
                 alert("목표 등록");

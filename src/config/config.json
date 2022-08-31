@@ -6,6 +6,13 @@
     "database": "goallector",
     "dialect": "mysql"
   },
+  "prod": {
+    "host": "localhost",
+    "username": "goallector",
+    "password": "goallector",
+    "database": "goallector",
+    "dialect": "mysql"
+  },
   "docker": {
     "username": "goallector",
     "password": "goallector",

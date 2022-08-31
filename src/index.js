@@ -5,6 +5,7 @@ const session = require("express-session");
 const path = require("path");
 const app = express();
 
+if ( process.env.NODE_ENV == undefined ) process.env.NODE_ENV = 'prod';
 dotenv.config({ path: path.join(__dirname, `./config/envs/${process.env.NODE_ENV}.env`) });
 dotenv.config({ path: path.join(__dirname, "./config/envs/common.env") });
 
