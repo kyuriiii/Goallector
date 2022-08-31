@@ -7,7 +7,7 @@
                 password: form.password.value
             }
 
-            window.API.post(`${URL}/user/login`, data).then((result) => {
+            window.API.post(`/user/login`, data).then((result) => {
                 if ( result.return ) {
                     window.MSG.success("로그인 성공", `${result.user.nickname}님 환영합니다.`, ()=>{
                         location.href="/";

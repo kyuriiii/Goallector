@@ -8,7 +8,7 @@
                 gender: form.gender.value
             }
 
-            window.API.post(`${URL}/user/register`, data).then((result) => {
+            window.API.post(`/user/register`, data).then((result) => {
                 if ( result.return ) {
                     window.MSG.success("회원가입 성공", `${result.user.nickname}님 환영합니다.`, () => {
                         location.href="/";

@@ -4,10 +4,7 @@ use goallector;
 CREATE USER 'goallector'@'%' IDENTIFIED BY 'goallector';
 GRANT ALL PRIVILEGES ON goallector.* TO 'goallector'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-
-
-select host, user, plugin, authentication_string from mysql.user;
-ALTER USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
+ALTER USER 'goallector'@'%' IDENTIFIED WITH mysql_native_password BY 'goallector';
 
 create table user (
 	id int unsigned not null auto_increment primary key,
