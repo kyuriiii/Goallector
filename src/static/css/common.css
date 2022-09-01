@@ -24,25 +24,48 @@ body {  background-color: var(--color-main); }
 .d-none{display:none;}
 .d-flex{display:flex;}
 
-input, select {
+.justify-content-center{justify-content: center;}
+.align-items-center{align-items: center;}
+
+.row { display: flex; flex-wrap: wrap; }
+.col-2 { flex: 0 0 auto; width: 16.66666667%; }
+.col-3 { flex: 0 0 auto; width: 25%; }
+.col-4 { flex: 0 0 auto; width: 33.33333333%; }
+.col-6 { flex: 0 0 auto; width: 50%; }
+.col-8 { flex: 0 0 auto; width: 66.66666667%; }
+.col-9 { flex: 0 0 auto; width: 75%}
+.col-10 { flex: 0 0 auto; width: 83.33333333%; }
+.col-12 { flex: 0 0 auto; width: 100%; }
+
+input[type=text], input[type=password], select, textarea {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
+	padding: 10px 15px;
+	margin: 10px 0;
 	width: 100%;
-    color: var(--color-main);
+    color: var(--color-indigo);
 }
 input.input_login,
-select.select_login {
-	background-color: var(--color-indigo);
+select.select_login { background-color: var(--color-indigo); color: var(--color-main); }
+input::placeholder,
+select.select_login option { color: #b1afad; }
+
+button {
+	border-radius: 20px;
+	border: 1px solid var(--color-pink);
+	background-color: var(--color-pink);
+	color: var(--color-indigo);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	margin: 10px 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
-input.input_login::placeholder,
-select.select_login option {
-    color: #b1afad;
-}
-textarea {
-    padding: 0 1em; 
-    border: 0;
-    width: 100%;
-    border-radius: 30px;
-}
+button:active { transform: scale(0.95); }
+button:focus { outline: none; }
+button:hover { cursor: pointer; transform: scale(1.1); }
+button.ghost { background-color: transparent; border-color: var(--color-indigo); }
+
+pre { overflow-wrap: normal; text-align: start; }

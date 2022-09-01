@@ -44,38 +44,6 @@ a {
 	text-decoration: none;
 	margin: 15px 0;
 }
-
-button {
-	border-radius: 20px;
-	border: 1px solid var(--color-pink);
-	background-color: var(--color-pink);
-	color: var(--color-indigo);
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	margin: 15px 0;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
-
-button:active {
-	transform: scale(0.95);
-}
-
-button:focus {
-	outline: none;
-}
-
-button:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-}
-
-button.ghost {
-	background-color: transparent;
-	border-color: var(--color-indigo);
-}
 form {
 	background-color: var(--color-main);
 	display: flex;
