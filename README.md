@@ -1,5 +1,5 @@
 # Goallector
-목표 달성 프로젝트
+[목표 달성 프로젝트](https://uncovered-nutmeg-b8e.notion.site/Goallector-c11ce93a0e5149b9b0774acb14ba337c)
 
 ### 프로젝트 실행 방법
 ```
